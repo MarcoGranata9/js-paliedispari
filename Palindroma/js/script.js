@@ -1,7 +1,11 @@
 const userWord = prompt("Inserisci una parola ti dirò se è palindroma o no")
 console.log(userWord)
 
-palindromeWordCheck(userWord)
+const stringResult = palindromeWordCheck(userWord)
+console.log(stringResult);
+
+document.querySelector(".result").innerHTML = stringResult
+
 
 
 // Functions
@@ -21,9 +25,11 @@ function palindromeWordCheck(word) {
         console.log(invertedWord)     
     }
 
+    let stringResult = ""
     if (invertedWord === word) {
-        console.log("Palindroma")
+        stringResult = "Palindroma"
     } else {
-        console.log("Non palindroma")
+        stringResult = "Non palindroma"
     }
+    return stringResult
 }
